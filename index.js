@@ -17,6 +17,7 @@ const canvasRows = document.querySelector("#canvas-rows");
 const canvasColumns = document.querySelector("#canvas-columns");
 const inputColor = document.querySelector("#canvas-color");
 let canvasColor = document.querySelector("#canvas-color").value;
+let isRainbowModeActive = false;
 
 canvasRows.innerHTML = slider.value;
 canvasColumns.innerHTML = slider.value;
@@ -25,7 +26,10 @@ appendSquaresToCanvas();
 
 slider.addEventListener("mousemove", (e) => changeTextRowsColumns(e));
 slider.addEventListener("mouseup", (e) => changeCanvasSize(e));
-inputColor.addEventListener("change", (e) => changeCanvasColor(e));
+inputColor.addEventListener("change", (e) => {
+  changeCanvasColor(e);
+});
+inputColor.addEventListener("click", () => (isRainbowModeActive = false));
 
 function changeTextRowsColumns({ target }) {
   canvasRows.innerHTML = target.value;
@@ -59,7 +63,14 @@ function changeCanvasColor({ target }) {
 }
 
 function paintDiv({ target }) {
-  target.style.backgroundColor = canvasColor;
+  if (!isRainbowModeActive) {
+    target.style.backgroundColor = canvasColor;
+  } else {
+    let r = Math.floor(Math.random() * (255 + 0) + 0);
+    let g = Math.floor(Math.random() * (255 + 0) + 0);
+    let b = Math.floor(Math.random() * (255 + 0) + 0);
+    target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+  }
 }
 
 // Settings
@@ -69,9 +80,7 @@ document
 function applySetting({ target }) {
   switch (target.id) {
     case "btn-rainbow":
-      let r = Math.floor(Math.random() * (255 + 0) + 0);
-      let g = Math.floor(Math.random() * (255 + 0) + 0);
-      let b = Math.floor(Math.random() * (255 + 0) + 0);
+      isRainbowModeActive = true;
       break;
     case "btn-eraser":
       canvasColor = "white";
