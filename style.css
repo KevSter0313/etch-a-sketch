@@ -1,4 +1,6 @@
 :root {
+  --ff: "Outfit", sans-serif;
+
   --white-1: #fff;
   --white-2: #f4f4f4;
   --white-3: #d9d9d9;
@@ -26,6 +28,91 @@ html {
 body {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
+  background-color: var(--white-2);
+  font-family: var(--ff);
+}
+
+.primary-header {
+  margin: 19px 21px;
+}
+
+main {
+  margin: 19px 21px;
+  flex: 2;
+}
+
+#canvas {
+  display: grid;
+  width: 100%;
+  max-width: 600px;
+  min-width: 216px;
+  aspect-ratio: 1/1;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+  background-color: var(--white-1);
+  border: var(--canvas-border);
+  margin: 1.5rem auto 1.5rem auto;
+}
+
+.set-canvas-size {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+#size-slider {
+  appearance: none;
+  width: 83px;
+  height: 5px;
+  background-color: var(--white-4);
+  border-radius: 20px;
+}
+
+#size-slider::-webkit-slider-thumb {
+  background: var(--white-3);
+  appearance: none;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.primary-footer {
+  background-color: var(--black-2);
+  padding: 21px 39px;
+  display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.primary-footer p {
+  color: var(--white-1);
+  font-size: 1.1rem;
+}
+
+.primary-footer p a {
+  color: var(--white-1);
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+#open-menu {
+  cursor: pointer;
+}
+
+#stroke-1,
+#stroke-2,
+#stroke-3 {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+#open-menu:hover #stroke-1,
+#open-menu:hover #stroke-3 {
+  transform: scaleX(1.2);
+}
+
+#open-menu:hover #stroke-2 {
+  transform: scaleX(0.5);
 }

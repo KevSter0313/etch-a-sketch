@@ -5,6 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="./assets/images/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,6 +14,61 @@
     />
   </head>
   <body>
+    <header class="primary-header">
+      <svg
+        id="open-menu"
+        role="button"
+        width="22"
+        height="20"
+        viewBox="0 0 22 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          id="stroke-1"
+          d="M1 1H16"
+          stroke="black"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+        />
+        <path
+          id="stroke-2"
+          d="M1 10H21"
+          stroke="black"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+        />
+        <path
+          id="stroke-3"
+          d="M1 19H16"
+          stroke="black"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+        />
+      </svg>
+    </header>
+    <main>
+      <div id="canvas" style="--rows: 4; --columns: 4"></div>
+      <div class="set-canvas-size">
+        <input
+          type="range"
+          name="size-slider"
+          id="size-slider"
+          min="1"
+          max="64"
+        />
+        <p>
+          <span id="canvas-rows">4</span>x<span id="canvas-columns">4</span>
+        </p>
+      </div>
+    </main>
+    <footer class="primary-footer">
+      <p>
+        Copyright &copy; 2023
+        <a href="https://github.com/KevSter0313">KevSter0313</a>
+      </p>
+    </footer>
+
     <script type="module" src="/index.js"></script>
   </body>
 </html>
