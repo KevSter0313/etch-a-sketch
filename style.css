@@ -26,6 +26,7 @@ html {
 }
 
 body {
+  overflow-y: hidden;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -43,6 +44,10 @@ main {
   flex: 2;
 }
 
+.canvas-and-settings {
+  margin-top: 2rem;
+}
+
 #canvas {
   display: grid;
   width: 100%;
@@ -53,7 +58,6 @@ main {
   grid-template-rows: repeat(var(--rows), 1fr);
   background-color: var(--white-1);
   border: var(--canvas-border);
-  margin: 1.5rem auto 1.5rem auto;
 }
 
 .set-canvas-size {
@@ -187,4 +191,40 @@ svg {
 
 .square {
   border: 2px solid red;
+}
+
+.canvas-and-settings .settings {
+  display: none;
+}
+
+@media (min-width: 47rem) {
+  #open-menu {
+    display: none;
+  }
+  #menu {
+    display: none;
+  }
+
+  .canvas-and-settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .canvas-and-settings .settings {
+    display: flex;
+  }
+
+  .settings-opt p {
+    color: var(--black-1);
+  }
+
+  #canvas {
+    width: 80%;
+  }
+
+  .hide {
+    display: none;
+  }
 }

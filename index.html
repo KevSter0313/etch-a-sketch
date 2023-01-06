@@ -83,8 +83,38 @@
       </div>
     </aside>
     <main>
-      <div id="canvas" style="--rows: 4; --columns: 4"></div>
-      <div class="set-canvas-size">
+      <div class="canvas-and-settings">
+        <div class="settings">
+          <div class="settings-opt">
+            <p>Current Color</p>
+            <input type="color" name="canvas-color" id="canvas-color" />
+          </div>
+          <div class="settings-opt">
+            <button id="btn-rainbow" class="btn-opt">Rainbow Mode</button>
+          </div>
+          <div class="settings-opt">
+            <button id="btn-eraser" class="btn-opt">Eraser</button>
+          </div>
+          <div class="settings-opt">
+            <button id="btn-clear" class="btn-opt">Clear</button>
+          </div>
+          <div class="set-canvas-size">
+            <input
+              type="range"
+              name="size-slider"
+              id="size-slider"
+              min="1"
+              max="64"
+              value="4"
+            />
+            <p>
+              <span id="canvas-rows">4</span>x<span id="canvas-columns">4</span>
+            </p>
+          </div>
+        </div>
+        <div id="canvas" style="--rows: 4; --columns: 4"></div>
+      </div>
+      <div class="set-canvas-size hide">
         <input
           type="range"
           name="size-slider"
