@@ -1,4 +1,4 @@
 # etch-a-sketch
-Project on The Odin Project
 
+<img src="/assets/screenshot.png" width="1200px"/><br>
 Live site: [live site](https://etch-a-sketch-b9mrclty0-kevster0313.vercel.app/)
